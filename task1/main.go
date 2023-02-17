@@ -34,19 +34,15 @@ func main() {
 		},
 	}
 
-	var nameToFind string
-	var foundUser bool = false
-	nameToFind = "john"
+	nameToFind := "john"
 
 	for _, user := range users {
 		if strings.ToLower(user.name) == strings.ToLower(nameToFind) {
 			fmt.Println(fmt.Sprintf("User was found by name: %v\r\n", nameToFind))
 			fmt.Println(user)
-			foundUser = true
+			return
 		}
 	}
 
-	if foundUser == false {
-		fmt.Println(fmt.Sprintf("User was not found by name: %v\r\n", nameToFind))
-	}
+	fmt.Println(fmt.Sprintf("User was not found by name: %v\r\n", nameToFind))
 }
